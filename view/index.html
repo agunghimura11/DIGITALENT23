@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <head>
+    <title>Antrian</title>
 
+    <style>
+        .antrian {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .txt-antrian {
+            font-size: 70px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-
+    <div class="antrian">
+        <span id="txt-antrian" class="txt-antrian">
+            {{ .antrian }}
+        </span>
+    </div>
 </body>
 </html>
 
@@ -11,6 +29,7 @@
 
 
 <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
