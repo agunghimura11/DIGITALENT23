@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyBgNfyAQs8edSA0Rl8RinnEUYI3bok1UOs",
+        authDomain: "dts23-aae6f.firebaseapp.com",
+        databaseURL: "https://dts23-aae6f.firebaseio.com",
+        projectId: "dts23-aae6f",
+        storageBucket: "dts23-aae6f.appspot.com",
+        messagingSenderId: "716484994331",
+        appId: "1:716484994331:web:cab7e6a34c45f8e74d9fbe"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    let antrianRef = firebase.database().ref('antrian');
+    antrianRef.on('value', function(snapshot) {
+        const antrian = snapshot.val();
+
+        const currentAntrian = antrian.find(item => item != null && item.status === false)
+
+        document.getElementById("txt-antrian").innerHTML = currentAntrian.id
+
+    })
+</script>
